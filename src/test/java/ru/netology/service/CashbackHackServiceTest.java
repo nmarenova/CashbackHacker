@@ -5,10 +5,10 @@ import org.testng.annotations.Test;
 import static org.testng.Assert.*;
 
 public class CashbackHackServiceTest {
+    CashbackHackService service = new CashbackHackService();
 
     @Test
     public void shouldCalculateIfAmountCorrect() {
-        CashbackHackService service= new CashbackHackService();
         int amount = 2500;
         int actual = service.remain(amount);
         int expected = 500;
@@ -17,7 +17,6 @@ public class CashbackHackServiceTest {
 
     @Test
     public void shouldCalculateIfAmountZero() {
-        CashbackHackService service= new CashbackHackService();
         int amount = 0;
         int actual = service.remain(amount);
         int expected = 1000;
@@ -25,7 +24,6 @@ public class CashbackHackServiceTest {
     }
     @Test
     public void shouldCalculateIfAmount1000() {
-        CashbackHackService service= new CashbackHackService();
         int amount = 1000;
         int actual = service.remain(amount);
         int expected = 0;
